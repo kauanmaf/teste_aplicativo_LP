@@ -1,8 +1,5 @@
-from converte_data import receber_datas, converter_data
-from le_arquivo_texto import ler_texto
-from calculo_data import calculo_datas
+from ferramentas import receber_datas, converter_data, ler_texto, calculo_datas
 import datetime
-
 
 def get_type_input():
     """
