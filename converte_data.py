@@ -27,7 +27,8 @@ def receber_datas(datas: str):
 def converter_data(data: str):
     """
     Recebe uma string de data da forma "dia de mes(nome do mes) de ANO" e retorna no formato de
-    "ANO-mes-dia".
+    "ANO-mes-dia", alguns tratamentos como para verificar se foram recebidos um dia, mês e ano
+    ou se o mês é válido foram deferidos.
 
     Parameters
     ----------
@@ -59,14 +60,22 @@ def converter_data(data: str):
         "Novembro": "11",
         "Dezembro": "12"
 }
+    lista_meses = list(meses.keys())
 
-    sep_data = data.split(" de ")
+    try:
+        sep_data = data.split(" de ")
+        if len(sep_data) != 3 or sep_data[1].capitalize() not in lista_meses:
+            raise TypeError
+    except ValueError:
+        print("Tente inserir uma string!")
+    except TypeError:
+        print("Formato de data requierido está incorreto!\nUm exemplo seria '29 de Janeiro de 2005'")
+
     dia = sep_data[0]
-
-    mes = sep_data[1]
-    mes_num = meses[mes]
-
+    mes = sep_data[1].capitalize()
     ano = sep_data[2]
+
+    mes_num = meses[mes]
 
     new_format = ano + "-" + mes_num + "-" + dia
 
