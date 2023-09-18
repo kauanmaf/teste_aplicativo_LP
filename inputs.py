@@ -10,7 +10,7 @@ def get_type_input():
     """
 
     # Decidindo qual o tipo de arquivo
-    type_input = input("Você deseja:\n ler um arquivo [1] ou digitar uma string [2]: ")
+    type_input = input("Você deseja:\nLer um arquivo [1] ou digitar uma string [2]: ")
 
 
     try: 
