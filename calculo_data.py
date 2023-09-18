@@ -10,8 +10,6 @@ def calculo_datas(data1, data2):
     
     return calculo
 
-calculo_datas("2004-05-07", "2004-06-23")
-
 
 
 
