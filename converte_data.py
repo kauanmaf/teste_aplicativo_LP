@@ -1,9 +1,23 @@
+import doctest
 
-def receber_datas(datas):
+
+def receber_datas(datas: str):
+    """
+    Recebe duas strings de datas separadas por um - e as devolve em uma lista
+    separadamente.
+
+    Args:
+        datas: str
+          String com duas datas a serem separadas.
+
+    Returns:
+        list: Lista com as duas datas separadas.
+    """
     sep_datas = datas.split(" - ")
     return sep_datas
 
-def converter_data(data):
+
+def converter_data(data: str):
     meses = {
         "Janeiro": "01",
         "Fevereiro": "02",
@@ -27,9 +41,8 @@ def converter_data(data):
 
     ano = sep_data[2]
 
-    new_format = ano + mes_num + dia
+    new_format = ano + "-" + mes_num + "-" + dia
 
     return new_format
-
 
 
