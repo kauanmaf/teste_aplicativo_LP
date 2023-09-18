@@ -1,9 +1,15 @@
 from ferramentas import receber_datas, converter_data, ler_texto, calculo_datas
 import datetime
+import doctest
 
 def get_type_input():
     """
     Função para receber inputs e returnar o usuário com a diferença de tempo entre strings
+
+    >>> Get_type_input()
+    >>> 1
+    >>> Nome.txt
+    >>> 11
     """
 
     # Decidindo qual o tipo de arquivo
@@ -50,3 +56,7 @@ def get_type_input():
 
         # Retornando a diferença
         return diferença_de_datas
+    
+    if __name__ == "__name__":
+        doctest.testmod(verbose=True)
+        print("teste concluído")

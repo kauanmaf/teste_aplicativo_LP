@@ -1,3 +1,10 @@
+""" Documentação do módulo
+    
+    Este módulo recebe as datas do usuário no formato string "DIA de MÊS de ANO - DIA de MÊS de ANO".
+    Então, ele divide as datas em duas strings e muda o jeito como estão escritas, de nomes para números que identificam os meses com um dicionário.
+    Ele prepara as strings do usuário para o cálculo em outros módulos.
+"""
+
 import doctest
 
 
