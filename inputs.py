@@ -39,7 +39,6 @@ def get_type_input():
             lista_com_datas = []
             data = input("Digite a string com as datas: ")
             lista_com_datas.append(data)
-            print(lista_com_datas)
     
     except ValueError:
         # tratando exceção levantada
