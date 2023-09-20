@@ -7,8 +7,15 @@ enviado pelo usuário em uma string a ser utilizada no cálculo em outros módul
 
 
 def ler_texto(nome_arquivo):
-    with open(nome_arquivo, "r") as arquivo:
-        data = arquivo.read().strip()
-    return data
+    """Função que lê datas de um arquivo de texto
 
+    Args:
+        nome_arquivo (_type_): _description_
+
+    Returns:
+        list: Uma lista com cada
+    """
+    with open(nome_arquivo, "r") as arquivo:
+        datas = arquivo.read().splitlines()
+    return datas
 
