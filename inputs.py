@@ -6,6 +6,8 @@ def get_type_input():
     """
     Função para receber inputs e returnar o usuário com a diferença de tempo entre strings
 
+    Retorna um lista com a diferença de dias.
+
     >>> Get_type_input()
     >>> 1
     >>> Nome.txt
@@ -28,13 +30,16 @@ def get_type_input():
                 raise ValueError
             
             # Pegando a string no formato especificado
-            string_com_datas = ler_texto(txt_com_datas)
+            lista_com_datas = ler_texto(txt_com_datas)
 
         # Se for uma string
         if type_input == "2":
 
             # Pegando a string no formato especificado
-            string_com_datas = input("Digite a string com as datas: ")
+            lista_com_datas = []
+            data = input("Digite a string com as datas: ")
+            lista_com_datas.append(data)
+            print(lista_com_datas)
     
     except ValueError:
         # tratando exceção levantada
@@ -44,19 +49,27 @@ def get_type_input():
         print("Ocorreu algum outro erro")
 
     else:
-        # Pegando uma lista com datas
-        list_with_dates = receber_datas(string_com_datas)
+        # Diferenças de dias:
+        lista_diferenca_de_data = []
+        for string in lista_com_datas:
+            # Pegando uma lista com datas
+            list_with_dates = receber_datas(string)
 
-        # Pegando todas as datas
-        primeira_data = converter_data(list_with_dates[0])
-        segunda_data = converter_data(list_with_dates[1])
+            # Pegando todas as datas
+            primeira_data = converter_data(list_with_dates[0])
+            segunda_data = converter_data(list_with_dates[1])
 
-        # Pegando as diferenças de data
-        diferença_de_datas = calculo_datas(primeira_data, segunda_data)
+            # Pegando as diferenças de data
+            diferença_de_datas = calculo_datas(primeira_data, segunda_data)
+
+            # Adicionando a lista
+            lista_diferenca_de_data.append(diferença_de_datas)
 
         # Retornando a diferença
-        return diferença_de_datas
+        return lista_diferenca_de_data  
     
     if __name__ == "__name__":
         doctest.testmod(verbose=True)
         print("teste concluído")
+
+get_type_input()
